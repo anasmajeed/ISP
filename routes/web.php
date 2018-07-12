@@ -12,5 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('mainpages.index');
 });
+Route::get('/main',function()
+{
+  return view('mainpages.index');
+})->name('main');
+
+Auth::routes();
+
+Route::resource('customer','CustomerController');
