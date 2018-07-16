@@ -16,7 +16,7 @@ class CustomerController extends Controller
     public function index()
     {
       $customers = Customer::all();
-        return view('admindashboard.admindashboard',compact('customers'));
+        return view('customer.index',compact('customers'));
     }
 
     /**
@@ -26,7 +26,7 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        return view('customer.create');
+      return view('customer.create');
     }
 
     /**
@@ -70,7 +70,7 @@ class CustomerController extends Controller
     public function show(Customer $customer)
     {
       $value = Customer::find($customer)->first();
-        return view('customer.index')->with('customer',$value);
+        return view('customer.show')->with('customer',$value);
     }
 
     /**
@@ -81,7 +81,7 @@ class CustomerController extends Controller
      */
     public function edit(Customer $customer)
     {
-        return view('customer.edit',compact('customer'));
+      return view('customer.edit',compact('customer'));
     }
 
     /**
@@ -105,13 +105,8 @@ class CustomerController extends Controller
       $customer->client_ip = $request->client_ip;
       $customer->username = $request->username;
       $customer->password = $request->password;
-      $month = "";
-      $day = "";
-      $year = "";
-      $month = strtok($request->activation_date,"/");
-      $day = strtok("/");
-      $year = strtok("/");
-      $customer->activation_date = $year."-".$month."-".$day;
+      $customer->activation_date = $request->activation_date;
+      // dd($customer->activation_date);
       $customer->save();
       return redirect()->route('customer.index');
     }

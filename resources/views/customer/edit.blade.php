@@ -92,7 +92,7 @@
                   <div class="input-group-addon">
                     <i class="fa fa-laptop"></i>
                   </div>
-                  <input type="text" name="router_ip" class="form-control" data-inputmask="'alias': 'ip'" data-mask " value="{{$customer->router_ip}}">
+                  <input type="text" name="router_ip" class="form-control" data-inputmask="'alias': 'ip'" data-mask  value="{{$customer->router_ip}}">
                 </div>
                 <!-- /.input group -->
               </div>

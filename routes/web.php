@@ -22,3 +22,4 @@ Route::get('/main',function()
 Auth::routes();
 
 Route::resource('customer','CustomerController');
+Route::resource('user','UserController');

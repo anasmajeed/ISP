@@ -54,6 +54,21 @@
           <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li> --}}
         </ul>
       </li>
+      <li class="treeview">
+        <a href="#">
+          <i class="fa fa-files-o"></i>
+          <span>Users</span>
+          <span class="pull-right-container">
+            {{-- <span class="label label-primary pull-right"></span> --}}
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="{{route('user.index')}}"><i class="fa fa-circle-o"></i>View</a></li>
+          <li><a href="{{route('user.create')}}"><i class="fa fa-circle-o"></i>Create</a></li>
+          {{-- <li><a href="{{route('customer.')}}><i class="fa fa-circle-o"></i>Edit</a></li>
+          <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li> --}}
+        </ul>
+      </li>
       <li>
         <a href="pages/widgets.html">
           <i class="fa fa-th"></i> <span>Widgets</span>

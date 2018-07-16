@@ -30,23 +30,24 @@
                 <tr>
                   <th>ID</th>
                   <th>Name</th>
-                  <th>Mobile</th>
-                  <th>CNIC</th>
-                  <th>Package</th>
-                  <th>Fee</th>
                   <th>Email</th>
+                  <th>Role</th>
                 </tr>
                 </thead>
                 <tbody>
-                  @foreach($customers as $customer)
+                  @foreach($users as $user)
                     <tr>
-                      <td>{{$customer->id}}</td>
-                      <td><a href="{{route('customer.show',$customer->id)}}">{{$customer->name}}</a></td>
-                      <td>{{$customer->mobile}}</td>
-                      <td>{{$customer->cnic}}</td>
-                      <td>{{$customer->package}}</td>
-                      <td>{{$customer->fee}}</td>
-                      <td>{{$customer->email}}</td>
+                      <td>{{$user->id}}</td>
+                      <td><a href="{{route('user.show',$user->id)}}">{{$user->name}}</a></td>
+                      <td>{{$user->email}}</td>
+                      <td>
+                        @foreach ($user->roles()->get() as $role)
+                          {{$role->name}}
+                        @if(count($user->roles()->get()) > 1)
+                          ,
+                        @endif
+                      @endforeach
+                    </td>
                     </tr>
                   @endforeach
                 </tbody>
@@ -54,11 +55,8 @@
                 <tr>
                   <th>ID</th>
                   <th>Name</th>
-                  <th>Mobile</th>
-                  <th>CNIC</th>
-                  <th>Package</th>
-                  <th>Fee</th>
                   <th>Email</th>
+                  <th>Role</th>
                 </tr>
                 </tfoot>
               </table>

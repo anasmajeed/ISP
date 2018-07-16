@@ -28,6 +28,7 @@ class CreateCustomersTable extends Migration
             $table->string('client_ip');
             $table->string('username')->nullable();
             $table->string('password')->nullable();
+            $table->boolean('status')->default(1);
             $table->timestamps();
         });
     }
