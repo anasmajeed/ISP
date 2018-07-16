@@ -17,14 +17,9 @@ class CreateCustomerRecordsTable extends Migration
             $table->increments('id');
             $table->integer('customer_id')->unsigned()->index();
             $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
-            $table->string('previous');
-            $table->double('paid',8,3);
-            $table->string('comment')->nullable();
-            $table->date('paying_date');
-            $table->integer('user_id')->unsigned()->index();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->double('total',8,3);
             $table->double('remaining',8,3);
-            $table->timestamps();  
+            $table->timestamps();
         });
     }
 
