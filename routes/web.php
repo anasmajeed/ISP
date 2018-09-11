@@ -21,5 +21,7 @@ Route::get('/main',function()
 
 Auth::routes();
 
+Route::get('/data','HomeController@add_entry');
+
 Route::resource('customer','CustomerController');
 Route::resource('user','UserController');
